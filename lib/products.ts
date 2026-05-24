@@ -125,6 +125,7 @@ export const products: Product[] = [
     images: ["/products/Finished_Birdhouse.jpg"],
     wood: "Pine / Cedar",
     inStock: true,
+    imagePosition: "center 60%",
   },
   {
     id: "garden-bench",
@@ -138,6 +139,7 @@ export const products: Product[] = [
     images: ["/products/Bench.jpg"],
     wood: "Pine",
     inStock: true,
+    imagePosition: "center 20%",
   },
   {
     id: "round-pedestal-table",

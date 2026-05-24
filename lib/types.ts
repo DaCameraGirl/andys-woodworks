@@ -11,6 +11,7 @@ export interface Product {
   inStock: boolean;
   featured?: boolean;
   priceOnRequest?: boolean; // show "Contact for pricing" instead of a price
+  imagePosition?: string;  // CSS object-position e.g. "top", "center", "bottom", "50% 20%"
 }
 
 export interface CartItem {
