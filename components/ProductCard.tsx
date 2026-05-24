@@ -62,21 +62,35 @@ export default function ProductCard({ product }: ProductCardProps) {
         </p>
         <div className="flex items-center justify-between">
           <span className="text-stone-900 font-bold text-base">
-            {formatPrice(product.price)}
+            {product.priceOnRequest ? (
+              <span className="text-amber-700 text-xs font-semibold">Contact for pricing</span>
+            ) : (
+              formatPrice(product.price)
+            )}
           </span>
-          <button
-            onClick={handleAddToCart}
-            disabled={!product.inStock}
-            className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all duration-200 ${
-              !product.inStock
-                ? "bg-stone-100 text-stone-400 cursor-not-allowed"
-                : added
-                ? "bg-green-600 text-white"
-                : "bg-stone-900 text-white hover:bg-amber-600"
-            }`}
-          >
-            {added ? "✓ Added" : "Add to Cart"}
-          </button>
+          {product.priceOnRequest ? (
+            <a
+              href="/contact"
+              onClick={(e) => e.stopPropagation()}
+              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors"
+            >
+              Inquire
+            </a>
+          ) : (
+            <button
+              onClick={handleAddToCart}
+              disabled={!product.inStock}
+              className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all duration-200 ${
+                !product.inStock
+                  ? "bg-stone-100 text-stone-400 cursor-not-allowed"
+                  : added
+                  ? "bg-green-600 text-white"
+                  : "bg-stone-900 text-white hover:bg-amber-600"
+              }`}
+            >
+              {added ? "✓ Added" : "Add to Cart"}
+            </button>
+          )}
         </div>
       </div>
     </div>
