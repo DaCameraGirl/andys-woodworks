@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--header)", borderTop: "1px solid var(--border)" }}>
+    <footer className="bg-header-trans" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>

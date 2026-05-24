@@ -24,31 +24,26 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Rustic wood grain texture overlay on the page */
+/* Fixed workshop background — shows through the whole page */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.03;
-  background-image: repeating-linear-gradient(
-    92deg,
-    transparent,
-    transparent 2px,
-    rgba(255,200,100,0.4) 2px,
-    rgba(255,200,100,0.4) 3px
-  ),
-  repeating-linear-gradient(
-    180deg,
-    transparent,
-    transparent 40px,
-    rgba(200,130,50,0.2) 40px,
-    rgba(200,130,50,0.2) 41px
-  );
+  background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.12;
 }
 
 * { position: relative; z-index: 1; }
+
+/* Make backgrounds slightly translucent so the workshop bleeds through */
+.bg-surface-trans { background: rgba(42, 26, 14, 0.92) !important; }
+.bg-card-trans    { background: rgba(50, 31, 17, 0.90) !important; }
+.bg-header-trans  { background: rgba(18, 10, 4,  0.93) !important; }
 
 .line-clamp-2 {
   display: -webkit-box;

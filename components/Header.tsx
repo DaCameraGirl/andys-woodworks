@@ -10,7 +10,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 shadow-lg" style={{ background: "var(--header)", borderBottom: "1px solid var(--border)" }}>
+    <header className="sticky top-0 z-50 shadow-lg bg-header-trans" style={{ borderBottom: "1px solid var(--border)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -58,7 +58,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden px-4 py-4 space-y-3" style={{ background: "var(--header)", borderTop: "1px solid var(--border)" }}>
+        <div className="md:hidden px-4 py-4 space-y-3 bg-header-trans" style={{ borderTop: "1px solid var(--border)" }}>
           {["Shop", "About", "Contact"].map((item) => (
             <Link key={item} href={item === "Shop" ? "/" : `/${item.toLowerCase()}`}
               className="block text-sm font-medium opacity-80 hover:opacity-100"
