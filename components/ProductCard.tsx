@@ -23,9 +23,11 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100">
+    <div className="group rounded-xl overflow-hidden transition-all duration-300"
+      style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
+    >
       <Link href={`/products/${product.id}`}>
-        <div className="relative aspect-square bg-stone-100 overflow-hidden">
+        <div className="relative aspect-square overflow-hidden" style={{ background: "var(--bg-surface)" }}>
           <Image
             src={product.images[0]}
             alt={product.name}
@@ -35,14 +37,15 @@ export default function ProductCard({ product }: ProductCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           {!product.inStock && (
-            <div className="absolute inset-0 bg-stone-900/60 flex items-center justify-center">
-              <span className="text-white font-semibold text-sm bg-stone-800 px-3 py-1 rounded-full">
+            <div className="absolute inset-0 flex items-center justify-center" style={{ background: "rgba(18,10,4,0.7)" }}>
+              <span className="text-sm font-semibold px-3 py-1 rounded-full" style={{ color: "var(--text)", background: "var(--bg-surface)" }}>
                 Out of Stock
               </span>
             </div>
           )}
           {product.featured && product.inStock && (
-            <span className="absolute top-3 left-3 bg-amber-400 text-stone-900 text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+            <span className="absolute top-3 left-3 text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+              style={{ background: "var(--gold)", color: "var(--header)" }}>
               Popular
             </span>
           )}
@@ -51,44 +54,39 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       <div className="p-4">
         <Link href={`/products/${product.id}`}>
-          <h3 className="font-semibold text-stone-800 text-sm leading-snug hover:text-amber-700 transition-colors mb-1">
+          <h3 className="font-semibold text-sm leading-snug transition-colors mb-1 hover:opacity-80" style={{ color: "var(--text)" }}>
             {product.name}
           </h3>
         </Link>
         {product.wood && (
-          <p className="text-xs text-stone-400 mb-2">{product.wood}</p>
+          <p className="text-xs mb-2" style={{ color: "var(--text-dim)" }}>{product.wood}</p>
         )}
-        <p className="text-xs text-stone-500 line-clamp-2 mb-4">
+        <p className="text-xs line-clamp-2 mb-4" style={{ color: "var(--text-muted)" }}>
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-stone-900 font-bold text-base">
+          <span className="font-bold text-base" style={{ color: product.priceOnRequest ? "var(--gold)" : "var(--gold-pale)" }}>
             {product.priceOnRequest ? (
-              <span className="text-amber-700 text-xs font-semibold">Contact for pricing</span>
+              <span className="text-xs font-semibold">Contact for pricing</span>
             ) : (
               formatPrice(product.price)
             )}
           </span>
           {product.priceOnRequest ? (
-            <a
-              href="/contact"
-              onClick={(e) => e.stopPropagation()}
-              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors"
-            >
+            <a href="/contact" onClick={(e) => e.stopPropagation()}
+              className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
+              style={{ background: "var(--bg-surface)", color: "var(--gold)", border: "1px solid var(--gold)" }}>
               Inquire
             </a>
           ) : (
-            <button
-              onClick={handleAddToCart}
-              disabled={!product.inStock}
-              className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all duration-200 ${
-                !product.inStock
-                  ? "bg-stone-100 text-stone-400 cursor-not-allowed"
-                  : added
-                  ? "bg-green-600 text-white"
-                  : "bg-stone-900 text-white hover:bg-amber-600"
-              }`}
-            >
+            <button onClick={handleAddToCart} disabled={!product.inStock}
+              className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all duration-200"
+              style={{
+                background: added ? "#16a34a" : "var(--gold)",
+                color: added ? "white" : "var(--header)",
+                opacity: !product.inStock ? 0.5 : 1,
+                cursor: !product.inStock ? "not-allowed" : "pointer",
+              }}>
               {added ? "✓ Added" : "Add to Cart"}
             </button>
           )}

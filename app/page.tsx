@@ -17,25 +17,28 @@ export default async function ShopPage({
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-stone-100 py-20 px-4 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80')",
-          }}
+      <section className="py-24 px-4 relative overflow-hidden" style={{ background: "var(--header)" }}>
+        <div className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80')" }}
+        />
+        <div className="absolute inset-0 opacity-30"
+          style={{ background: "radial-gradient(ellipse at center, rgba(212,146,42,0.15) 0%, transparent 70%)" }}
         />
         <div className="max-w-4xl mx-auto relative text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-amber-300 tracking-tight">
+          <p className="text-xs uppercase tracking-[0.3em] mb-4 font-semibold" style={{ color: "var(--gold)" }}>
+            Handcrafted in the workshop
+          </p>
+          <h1 className="text-5xl sm:text-7xl font-bold mb-5 tracking-tight" style={{ color: "var(--gold-pale)" }}>
             Built by Hand.
           </h1>
-          <p className="text-xl text-stone-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Every cutting board, bowl, and piece of furniture leaves Andy&apos;s
-            shop one at a time. No batch production. No shortcuts.
+          <div className="w-16 h-0.5 mx-auto mb-6" style={{ background: "var(--gold)" }} />
+          <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: "var(--text-muted)" }}>
+            Every bar, chair, cradle, and keepsake leaves Andy&apos;s shop one at a time.
+            No shortcuts. No batch production. Just wood and craft.
           </p>
-          <Link
-            href="#shop"
-            className="inline-block bg-amber-400 text-stone-900 font-bold px-8 py-3 rounded-lg hover:bg-amber-300 transition-colors text-sm uppercase tracking-wide"
+          <Link href="#shop"
+            className="inline-block font-bold px-10 py-4 rounded-lg transition-all text-sm uppercase tracking-widest"
+            style={{ background: "var(--gold)", color: "var(--header)" }}
           >
             Shop Now
           </Link>
@@ -46,29 +49,21 @@ export default async function ShopPage({
       <section id="shop" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-10">
-          <Link
-            href="/"
-            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
-              !activeCategory
-                ? "bg-stone-900 text-white border-stone-900"
-                : "bg-white text-stone-600 border-stone-200 hover:border-stone-400"
-            }`}
-          >
-            All
-          </Link>
-          {categories.map((cat) => (
-            <Link
-              key={cat}
-              href={`/?category=${cat}`}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
-                activeCategory === cat
-                  ? "bg-stone-900 text-white border-stone-900"
-                  : "bg-white text-stone-600 border-stone-200 hover:border-stone-400"
-              }`}
-            >
-              {cat}
-            </Link>
-          ))}
+          {["All", ...categories].map((cat) => {
+            const isActive = cat === "All" ? !activeCategory : activeCategory === cat;
+            return (
+              <Link key={cat} href={cat === "All" ? "/" : `/?category=${cat}`}
+                className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+                style={{
+                  background: isActive ? "var(--gold)" : "var(--bg-surface)",
+                  color: isActive ? "var(--header)" : "var(--text-muted)",
+                  borderColor: isActive ? "var(--gold)" : "var(--border)",
+                }}
+              >
+                {cat}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Grid */}
@@ -79,25 +74,25 @@ export default async function ShopPage({
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-20 text-stone-400">
+          <div className="text-center py-20" style={{ color: "var(--text-dim)" }}>
             No items in this category right now.
           </div>
         )}
       </section>
 
       {/* Custom orders callout */}
-      <section className="bg-amber-50 border-t border-amber-100 py-16 px-4">
+      <section className="py-16 px-4" style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border)" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-stone-800 mb-3">
+          <h2 className="text-2xl font-bold mb-3" style={{ color: "var(--gold-pale)" }}>
             Need something custom?
           </h2>
-          <p className="text-stone-600 mb-6">
-            Andy takes on a limited number of custom orders each month — engraved
-            gifts, specific dimensions, matching sets. Reach out early.
+          <p className="mb-6" style={{ color: "var(--text-muted)" }}>
+            Andy takes on a limited number of custom orders each month — specific dimensions,
+            matching sets, personalized gifts. Reach out early.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-stone-900 text-white font-semibold px-6 py-3 rounded-lg hover:bg-stone-700 transition-colors"
+          <Link href="/contact"
+            className="inline-block font-semibold px-6 py-3 rounded-lg transition-all border"
+            style={{ color: "var(--gold)", borderColor: "var(--gold)", background: "transparent" }}
           >
             Request a Custom Order
           </Link>

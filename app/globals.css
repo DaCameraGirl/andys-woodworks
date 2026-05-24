@@ -1,19 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f7;
-  --foreground: #1c1917;
+  --bg:         #1c1008;
+  --bg-surface: #2a1a0e;
+  --bg-card:    #321f11;
+  --border:     #4a2e18;
+  --text:       #f5e6d0;
+  --text-muted: #c4a882;
+  --text-dim:   #8a6b4a;
+  --gold:       #d4922a;
+  --gold-light: #e8a840;
+  --gold-pale:  #f5d98a;
+  --header:     #120a04;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--text);
   font-family: system-ui, -apple-system, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
+/* Rustic wood grain texture overlay on the page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    92deg,
+    transparent,
+    transparent 2px,
+    rgba(255,200,100,0.4) 2px,
+    rgba(255,200,100,0.4) 3px
+  ),
+  repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 40px,
+    rgba(200,130,50,0.2) 40px,
+    rgba(200,130,50,0.2) 41px
+  );
+}
+
+* { position: relative; z-index: 1; }
 
 .line-clamp-2 {
   display: -webkit-box;

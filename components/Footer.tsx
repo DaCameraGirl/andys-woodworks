@@ -2,68 +2,49 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-900 text-stone-400 mt-20">
+    <footer style={{ background: "var(--header)", borderTop: "1px solid var(--border)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl">🪵</span>
-              <span className="font-bold text-amber-300 text-lg">
+              <span className="font-bold text-lg" style={{ color: "var(--gold)" }}>
                 Andy&apos;s Woodworks
               </span>
             </div>
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
               Every piece is built by hand, one at a time, with wood selected
               for its character and grain. No shortcuts.
             </p>
           </div>
 
-          {/* Links */}
           <div>
-            <h3 className="text-stone-200 font-semibold mb-3 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-3 text-xs uppercase tracking-wider" style={{ color: "var(--text-dim)" }}>
               Navigate
             </h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="hover:text-amber-300 transition-colors">
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-amber-300 transition-colors">
-                  About Andy
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-amber-300 transition-colors">
-                  Custom Orders
-                </Link>
-              </li>
-              <li>
-                <Link href="/cart" className="hover:text-amber-300 transition-colors">
-                  Cart
-                </Link>
-              </li>
+              {[["Shop", "/"], ["About Andy", "/about"], ["Custom Orders", "/contact"], ["Cart", "/cart"]].map(([label, href]) => (
+                <li key={label}>
+                  <Link href={href} className="transition-colors hover:opacity-100 opacity-60" style={{ color: "var(--text)" }}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="text-stone-200 font-semibold mb-3 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-3 text-xs uppercase tracking-wider" style={{ color: "var(--text-dim)" }}>
               Get in Touch
             </h3>
-            <p className="text-sm mb-2">Custom orders welcome.</p>
-            <Link
-              href="/contact"
-              className="inline-block text-sm text-amber-300 hover:text-amber-200 transition-colors"
-            >
+            <p className="text-sm mb-2" style={{ color: "var(--text-muted)" }}>Custom orders welcome.</p>
+            <Link href="/contact" className="inline-block text-sm transition-colors hover:opacity-80" style={{ color: "var(--gold)" }}>
               Send Andy a message →
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-stone-800 mt-8 pt-6 text-xs text-center text-stone-600">
+        <div className="mt-8 pt-6 text-xs text-center" style={{ borderTop: "1px solid var(--border)", color: "var(--text-dim)" }}>
           © {new Date().getFullYear()} Andy&apos;s Woodworks. All rights reserved.
         </div>
       </div>

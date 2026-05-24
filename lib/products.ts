@@ -2,18 +2,33 @@ import { Product } from "./types";
 
 export const products: Product[] = [
   {
-    id: "pine-bar-6ft",
-    name: "6-Foot Handcrafted Pine Bar",
-    description: "Solid pine bar with horizontal plank front and rich stained top — perfect for a man cave, garage, or patio.",
+    id: "pine-bar-6ft-finished",
+    name: "6-Foot Pine Bar — Finished",
+    description: "Solid pine bar with horizontal plank front and rich dark-stained top — ready to go.",
     longDescription:
-      "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. The finished version features a beautiful dark walnut-stained top that makes the grain pop. Wide, flat surface is perfect for a home bar, man cave, garage, or outdoor entertaining space. Can be stained or painted to your color preference.",
+      "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. Finished with a rich dark walnut stain that makes the grain pop. Wide flat top, sturdy frame. Perfect for a home bar, man cave, garage, or patio.",
     price: 200000,
     category: "Furniture",
-    images: ["/products/Finished_6_Foot_Bar.jpg", "/products/6-foot-bar.jpg"],
+    images: ["/products/Finished_6_Foot_Bar.jpg"],
     dimensions: '72" × 24" × 42" tall',
     wood: "Pine",
     inStock: true,
     featured: true,
+    imagePosition: "center 40%",
+  },
+  {
+    id: "pine-bar-6ft-unfinished",
+    name: "6-Foot Pine Bar — Unfinished",
+    description: "Same solid pine bar, raw and ready for you to stain or paint any color you want.",
+    longDescription:
+      "Same great construction as the finished bar — solid pine, horizontal tongue-and-groove front, wide flat top — but delivered raw so you can stain, paint, or seal it yourself. Great if you want a custom color to match your space.",
+    price: 0,
+    priceOnRequest: true,
+    category: "Furniture",
+    images: ["/products/6-foot-bar.jpg"],
+    dimensions: '72" × 24" × 42" tall',
+    wood: "Pine",
+    inStock: true,
   },
   {
     id: "king-chair-set",
