@@ -30,7 +30,6 @@ export const products: Product[] = [
     featured: true,
   },
   {
-  {
     id: "king-chair-single",
     name: "King Chair — Single",
     description: "Tall bar-height Adirondack-style king chair in a warm walnut stain.",
