@@ -20,9 +20,10 @@ export default function AboutPage() {
           finishing your piece.
         </p>
         <p>
-          He works primarily with walnut, cherry, white oak, and maple —
-          sourced from domestic mills whenever possible. Finishes are always
-          food-safe on anything that touches food.
+          He works with a wide range of woods — pine, walnut, cherry, white
+          oak, maple, and cedar — sourced from domestic mills whenever possible.
+          Pine is a favorite for big statement pieces like bars, chairs, and
+          cradles. Finishes are always food-safe on anything that touches food.
         </p>
         <p>
           Custom orders are welcome. If you have something specific in mind —
