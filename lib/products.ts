@@ -1,21 +1,7 @@
 import { Product } from "./types";
 
 export const products: Product[] = [
-  {
-    id: "pine-bar-6ft-finished",
-    name: "6-Foot Pine Bar — Finished",
-    description: "Solid pine bar with horizontal plank front and rich dark-stained top — ready to go.",
-    longDescription:
-      "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. Finished with a rich dark walnut stain that makes the grain pop. Wide flat top, sturdy frame. Perfect for a home bar, man cave, garage, or patio.",
-    price: 200000,
-    category: "Furniture",
-    images: ["/products/Finished_6_Foot_Bar.jpg"],
-    dimensions: '72" × 24" × 42" tall',
-    wood: "Pine",
-    inStock: true,
-    featured: true,
-    imagePosition: "center 40%",
-  },
+  // ── BARS ──────────────────────────────────────────────────────────────
   {
     id: "pine-bar-6ft-unfinished",
     name: "6-Foot Pine Bar — Unfinished",
@@ -26,10 +12,27 @@ export const products: Product[] = [
     priceOnRequest: true,
     category: "Furniture",
     images: ["/products/6-foot-bar.jpg"],
-    dimensions: '72" × 24" × 42" tall',
+    dimensions: '72" x 24" x 42" tall',
     wood: "Pine",
     inStock: true,
   },
+  {
+    id: "pine-bar-6ft-finished",
+    name: "6-Foot Pine Bar — Finished",
+    description: "Solid pine bar with horizontal plank front and rich dark-stained top — ready to go.",
+    longDescription:
+      "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. Finished with a rich dark walnut stain that makes the grain pop. Wide flat top, sturdy frame. Perfect for a home bar, man cave, garage, or patio.",
+    price: 200000,
+    category: "Furniture",
+    images: ["/products/Finished_6_Foot_Bar.jpg"],
+    dimensions: '72" x 24" x 42" tall',
+    wood: "Pine",
+    inStock: true,
+    featured: true,
+    imagePosition: "center 40%",
+  },
+
+  // ── KING CHAIRS ────────────────────────────────────────────────────────
   {
     id: "king-chair-set",
     name: "King Chair Set — 2 Chairs + Pedestal Table",
@@ -59,62 +62,8 @@ export const products: Product[] = [
     featured: true,
     imagePosition: "center 30%",
   },
-  {
-    id: "farmhouse-picnic-table",
-    name: "Farmhouse Picnic Table with Bench",
-    description: "Heavy-duty farmhouse picnic table with X-brace legs and matching bench — seats 6 comfortably.",
-    longDescription:
-      "Built from structural pine with the classic X-brace trestle design. Thick plank top, matching bench included. Solid enough to live on a patio or deck for years. Can be stained, painted, or left natural with an outdoor sealer. This is a serious piece of furniture — not flimsy, not flat-pack.",
-    price: 0,
-    priceOnRequest: true,
-    category: "Outdoor",
-    images: ["/products/Park_Bench.jpg"],
-    wood: "Pine",
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: "entryway-hall-tree",
-    name: "Entryway Hall Tree with Bench & Storage",
-    description: "Full entryway hall tree — top shelf, coat hooks, bench seat, and lower cubbies.",
-    longDescription:
-      "Everything you need right inside the front door. This hall tree has a display shelf on top, four heavy-duty coat hooks in the middle, a bench seat for putting on shoes, and open storage cubbies below. Finished in a warm honey-walnut stain. A statement piece for any entryway.",
-    price: 0,
-    priceOnRequest: true,
-    category: "Furniture",
-    images: ["/products/Coat_Rack.jpg"],
-    wood: "Pine",
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: "kitchen-island",
-    name: "Farmhouse Kitchen Island / Console Table",
-    description: "White farmhouse-style island with X-brace sides, tray top, and two lower shelves.",
-    longDescription:
-      "Clean farmhouse styling with X-brace side panels, a raised tray-edge top, and two open lower shelves for storage. Painted white here but can be done in any color. Works as a kitchen island, entryway console, bar cart, or potting table. Built solid — no wobble.",
-    price: 0,
-    priceOnRequest: true,
-    category: "Furniture",
-    images: ["/products/Kitchen_Island.jpg"],
-    wood: "Pine",
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: "baby-cradle-finished",
-    name: "Heirloom Baby Cradle — Finished",
-    description: "Hand-built spindle cradle with rocker base, rich walnut stain — built to last generations.",
-    longDescription:
-      "A true heirloom piece. Spindle sides, gentle rocker base, finished in a rich walnut stain. Built to be passed down — not mass-produced, not flat-packed. Every one is made to order.",
-    price: 0,
-    priceOnRequest: true,
-    category: "Furniture",
-    images: ["/products/baby-cradle.jpg", "/products/Baby_Crib.jpg"],
-    wood: "Pine",
-    inStock: true,
-    featured: true,
-  },
+
+  // ── BABY ITEMS — unfinished first ──────────────────────────────────────
   {
     id: "baby-cradle-unfinished",
     name: "Baby Cradle — Unfinished / Raw Pine",
@@ -143,46 +92,64 @@ export const products: Product[] = [
     imagePosition: "center 30%",
   },
   {
-    id: "bar-stools",
-    name: "Bar Stools — Set of 2",
-    description: "Solid wood bar stools with round seat and stretcher base — rich walnut stain.",
+    id: "baby-cradle-finished",
+    name: "Heirloom Baby Cradle — Finished",
+    description: "Hand-built spindle cradle with rocker base, rich walnut stain — built to last generations.",
     longDescription:
-      "A matching set of two bar stools, turned and assembled by hand. Round seat, angled legs, and a stretcher ring base for foot support. Finished in a warm walnut stain that shows off the grain. Solid and sturdy — no wobble. Pair these with the 6-foot bar for the perfect home bar setup.",
+      "A true heirloom piece. Spindle sides, gentle rocker base, finished in a rich walnut stain. Built to be passed down — not mass-produced, not flat-packed. Every one is made to order.",
     price: 0,
     priceOnRequest: true,
     category: "Furniture",
-    images: ["/products/Finished_Set_Chairs.jpg"],
+    images: ["/products/baby-cradle.jpg", "/products/Baby_Crib.jpg"],
     wood: "Pine",
     inStock: true,
     featured: true,
   },
+
+  // ── FURNITURE ──────────────────────────────────────────────────────────
   {
-    id: "boat-shelf",
-    name: "Boat-Shaped Wall Shelf",
-    description: "Hand-built pine shelf shaped like a rowboat hull — 3 shelves, tongue-and-groove back.",
+    id: "entryway-hall-tree",
+    name: "Entryway Hall Tree with Bench & Storage",
+    description: "Full entryway hall tree — top shelf, coat hooks, bench seat, and lower cubbies.",
     longDescription:
-      "One of Andy's most popular pieces. Shaped like the hull of a classic rowboat, this wall shelf features three open shelves backed with tongue-and-groove pine paneling. Finished with a warm walnut stain. Great for a lake house, kid's room, nautical-themed space, or anywhere you want something that makes people stop and ask where you got it.",
+      "Everything you need right inside the front door. This hall tree has a display shelf on top, four heavy-duty coat hooks in the middle, a bench seat for putting on shoes, and open storage cubbies below. Finished in a warm honey-walnut stain. A statement piece for any entryway.",
     price: 0,
     priceOnRequest: true,
-    category: "Decor",
-    images: ["/products/boat-shelf.jpg", "/products/Boat_Shaped_Library.jpg"],
+    category: "Furniture",
+    images: ["/products/Coat_Rack.jpg"],
     wood: "Pine",
     inStock: true,
     featured: true,
   },
   {
-    id: "log-cabin-birdhouse",
-    name: "Log Cabin Birdhouse",
-    description: "Detailed log cabin birdhouse with wraparound deck railing and dark stain.",
+    id: "kitchen-island",
+    name: "Farmhouse Kitchen Island / Console Table",
+    description: "White farmhouse-style island with X-brace sides, tray top, and two lower shelves.",
     longDescription:
-      "Built like a little house — steeply pitched roof, log-style siding, and a full wraparound deck with railing. Dark walnut stain gives it a rustic cabin look. Great as a functional birdhouse or as garden decor. Each one is slightly different because Andy builds them by hand.",
+      "Clean farmhouse styling with X-brace side panels, a raised tray-edge top, and two open lower shelves for storage. Painted white here but can be done in any color. Works as a kitchen island, entryway console, bar cart, or potting table. Built solid — no wobble.",
+    price: 0,
+    priceOnRequest: true,
+    category: "Furniture",
+    images: ["/products/Kitchen_Island.jpg"],
+    wood: "Pine",
+    inStock: true,
+    featured: true,
+  },
+
+  // ── BENCHES + STOOLS — grouped together ────────────────────────────────
+  {
+    id: "farmhouse-picnic-table",
+    name: "Farmhouse Picnic Table with Bench",
+    description: "Heavy-duty farmhouse picnic table with X-brace legs and matching bench — seats 6 comfortably.",
+    longDescription:
+      "Built from structural pine with the classic X-brace trestle design. Thick plank top, matching bench included. Solid enough to live on a patio or deck for years. Can be stained, painted, or left natural with an outdoor sealer. This is a serious piece of furniture — not flimsy, not flat-pack.",
     price: 0,
     priceOnRequest: true,
     category: "Outdoor",
-    images: ["/products/Finished_Birdhouse.jpg"],
-    wood: "Pine / Cedar",
+    images: ["/products/Park_Bench.jpg"],
+    wood: "Pine",
     inStock: true,
-    imagePosition: "top",
+    featured: true,
   },
   {
     id: "garden-bench",
@@ -199,30 +166,34 @@ export const products: Product[] = [
     imagePosition: "top",
   },
   {
-    id: "round-pedestal-table",
-    name: "Round Pedestal End Table",
-    description: "Solid pine round-top pedestal table — great as a side table, bistro table, or plant stand.",
+    id: "bar-stools",
+    name: "Bar Stools — Set of 2",
+    description: "Solid wood bar stools with round seat and stretcher base — rich walnut stain.",
     longDescription:
-      "Clean and simple. Round top, turned pedestal column, and a four-point cross base. Shown here unfinished but available stained or painted to match anything. Works as a side table, bistro table, nightstand, or plant stand. Pairs great with the King Chair set.",
+      "A matching set of two bar stools, turned and assembled by hand. Round seat, angled legs, and a stretcher ring base for foot support. Finished in a warm walnut stain that shows off the grain. Solid and sturdy — no wobble. Pair these with the 6-foot bar for the perfect home bar setup.",
     price: 0,
     priceOnRequest: true,
     category: "Furniture",
-    images: ["/products/Round_End_Table.jpg"],
+    images: ["/products/Finished_Set_Chairs.jpg"],
     wood: "Pine",
     inStock: true,
+    featured: true,
   },
+
+  // ── DECOR ──────────────────────────────────────────────────────────────
   {
-    id: "elevated-dog-feeder",
-    name: "Elevated Dog Bowl Stand",
-    description: "Raised pine dog feeder with two stainless steel bowls — better for your dog's posture.",
+    id: "boat-shelf",
+    name: "Boat-Shaped Wall Shelf",
+    description: "Hand-built pine shelf shaped like a rowboat hull — 3 shelves, tongue-and-groove back.",
     longDescription:
-      "Raised feeders are easier on a dog's neck and joints — and this one actually looks good in your house. Solid pine box construction with a warm stain, fitted with two removable stainless steel bowls. Available in small, medium, or large dog sizes.",
+      "One of Andy's most popular pieces. Shaped like the hull of a classic rowboat, this wall shelf features three open shelves backed with tongue-and-groove pine paneling. Finished with a warm walnut stain. Great for a lake house, kid's room, nautical-themed space, or anywhere you want something that makes people stop and ask where you got it.",
     price: 0,
     priceOnRequest: true,
-    category: "Pets",
-    images: ["/products/Dog_Feeder_Set.jpg"],
+    category: "Decor",
+    images: ["/products/boat-shelf.jpg", "/products/Boat_Shaped_Library.jpg"],
     wood: "Pine",
     inStock: true,
+    featured: true,
   },
   {
     id: "heart-planter",
@@ -237,6 +208,37 @@ export const products: Product[] = [
     wood: "Pine",
     inStock: true,
   },
+
+  // ── OUTDOOR ────────────────────────────────────────────────────────────
+  {
+    id: "log-cabin-birdhouse",
+    name: "Log Cabin Birdhouse",
+    description: "Detailed log cabin birdhouse with wraparound deck railing and dark stain.",
+    longDescription:
+      "Built like a little house — steeply pitched roof, log-style siding, and a full wraparound deck with railing. Dark walnut stain gives it a rustic cabin look. Great as a functional birdhouse or as garden decor. Each one is slightly different because Andy builds them by hand.",
+    price: 0,
+    priceOnRequest: true,
+    category: "Outdoor",
+    images: ["/products/Finished_Birdhouse.jpg"],
+    wood: "Pine / Cedar",
+    inStock: true,
+    imagePosition: "top",
+  },
+
+  // ── MORE FURNITURE ─────────────────────────────────────────────────────
+  {
+    id: "round-pedestal-table",
+    name: "Round Pedestal End Table",
+    description: "Solid pine round-top pedestal table — great as a side table, bistro table, or plant stand.",
+    longDescription:
+      "Clean and simple. Round top, turned pedestal column, and a four-point cross base. Shown here unfinished but available stained or painted to match anything. Works as a side table, bistro table, nightstand, or plant stand. Pairs great with the King Chair set.",
+    price: 0,
+    priceOnRequest: true,
+    category: "Furniture",
+    images: ["/products/Round_End_Table.jpg"],
+    wood: "Pine",
+    inStock: true,
+  },
   {
     id: "toy-chest",
     name: "Toy Chest / Storage Bench",
@@ -247,6 +249,21 @@ export const products: Product[] = [
     priceOnRequest: true,
     category: "Furniture",
     images: ["/products/Unfinished_Toybox.jpg"],
+    wood: "Pine",
+    inStock: true,
+  },
+
+  // ── PETS ───────────────────────────────────────────────────────────────
+  {
+    id: "elevated-dog-feeder",
+    name: "Elevated Dog Bowl Stand",
+    description: "Raised pine dog feeder with two stainless steel bowls — better for your dog's posture.",
+    longDescription:
+      "Raised feeders are easier on a dog's neck and joints — and this one actually looks good in your house. Solid pine box construction with a warm stain, fitted with two removable stainless steel bowls. Available in small, medium, or large dog sizes.",
+    price: 0,
+    priceOnRequest: true,
+    category: "Pets",
+    images: ["/products/Dog_Feeder_Set.jpg"],
     wood: "Pine",
     inStock: true,
   },

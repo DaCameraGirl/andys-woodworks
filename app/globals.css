@@ -14,36 +14,27 @@
   --header:     #120a04;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, sans-serif;
-}
-
+/* Workshop tools image pinned to the viewport — visible everywhere on the page */
 html {
-  scroll-behavior: smooth;
-}
-
-/* Fixed workshop background — shows through the whole page */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
   background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.12;
+  scroll-behavior: smooth;
 }
 
-* { position: relative; z-index: 1; }
+/* Semi-transparent dark overlay on body — lets the tools show through */
+body {
+  background-color: rgba(28, 16, 8, 0.68);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
 
-/* Make backgrounds slightly translucent so the workshop bleeds through */
-.bg-surface-trans { background: rgba(42, 26, 14, 0.92) !important; }
-.bg-card-trans    { background: rgba(50, 31, 17, 0.90) !important; }
-.bg-header-trans  { background: rgba(18, 10, 4,  0.93) !important; }
+/* Translucent section/card backgrounds so the workshop image bleeds through */
+.bg-surface-trans { background: rgba(42, 26, 14, 0.88) !important; }
+.bg-card-trans    { background: rgba(50, 31, 17, 0.86) !important; }
+.bg-header-trans  { background: rgba(18, 10, 4,  0.90) !important; }
 
 .line-clamp-2 {
   display: -webkit-box;
