@@ -7,7 +7,7 @@ export const products: Product[] = [
     description: "Solid pine bar with horizontal plank front and rich stained top — perfect for a man cave, garage, or patio.",
     longDescription:
       "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. The finished version features a beautiful dark walnut-stained top that makes the grain pop. Wide, flat surface is perfect for a home bar, man cave, garage, or outdoor entertaining space. Can be stained or painted to your color preference.",
-    price: 160000,
+    price: 200000,
     category: "Furniture",
     images: ["/products/Finished_6_Foot_Bar.jpg", "/products/6-foot-bar.jpg"],
     dimensions: '72" × 24" × 42" tall',
