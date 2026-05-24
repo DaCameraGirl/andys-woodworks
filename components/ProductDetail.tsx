@@ -47,7 +47,7 @@ export default function ProductDetail({ product }: Props) {
               src={product.images[activeImage]}
               alt={product.name}
               fill
-              className="object-contain"
+              className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
@@ -68,7 +68,7 @@ export default function ProductDetail({ product }: Props) {
                     src={img}
                     alt={`${product.name} view ${idx + 1}`}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     sizes="80px"
                   />
                 </button>
@@ -172,7 +172,7 @@ export default function ProductDetail({ product }: Props) {
                     src={p.images[0]}
                     alt={p.name}
                     fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>

@@ -25,12 +25,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100">
       <Link href={`/products/${product.id}`}>
-        <div className="relative h-56 bg-stone-100 overflow-hidden">
+        <div className="relative aspect-square bg-stone-100 overflow-hidden">
           <Image
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-contain group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           {!product.inStock && (
