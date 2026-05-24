@@ -114,7 +114,6 @@ export const products: Product[] = [
     inStock: true,
   },
   {
-  {
     id: "baby-crib-unfinished",
     name: "Baby Crib — Unfinished",
     description: "Slatted baby crib with arched headboard and rocker base — raw pine, ready to finish.",
