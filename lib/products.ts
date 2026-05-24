@@ -111,6 +111,20 @@ export const products: Product[] = [
     inStock: true,
   },
   {
+    id: "pine-bar-6ft",
+    name: "6-Foot Pine Bar",
+    description: "Solid pine bar with tongue-and-groove front panels and wide top surface.",
+    longDescription:
+      "Built from solid pine with horizontal tongue-and-groove planking on the front and sides. Wide, flat top is perfect for a home bar, man cave, garage, or outdoor entertaining space. Sturdy frame construction with a clean, classic look. Can be stained, painted, or left natural — Andy can finish it to order.",
+    price: 160000,
+    category: "Furniture",
+    images: ["/products/6-foot-bar.jpg"],
+    dimensions: '72" × 24" × 42" tall',
+    wood: "Pine",
+    inStock: true,
+    featured: true,
+  },
+  {
     id: "custom-charcuterie",
     name: "Custom Charcuterie / Gift Board",
     description: "Personalized charcuterie board with engraved name or message.",
