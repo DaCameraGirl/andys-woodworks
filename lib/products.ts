@@ -30,6 +30,7 @@ export const products: Product[] = [
     featured: true,
   },
   {
+  {
     id: "king-chair-single",
     name: "King Chair — Single",
     description: "Tall bar-height Adirondack-style king chair in a warm walnut stain.",
@@ -42,6 +43,7 @@ export const products: Product[] = [
     wood: "Pine",
     inStock: true,
     featured: true,
+    imagePosition: "center 30%",
   },
   {
     id: "farmhouse-picnic-table",
