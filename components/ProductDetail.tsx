@@ -45,13 +45,13 @@ export default function ProductDetail({ product }: Props) {
           {/* Main image — object-contain so you always see the full piece */}
           <div
             className="relative rounded-2xl overflow-hidden mb-3"
-            style={{ background: "var(--bg-surface)", border: "1px solid var(--border)", minHeight: "520px" }}
+            style={{ background: "var(--bg-surface)", border: "1px solid var(--border)", minHeight: "640px" }}
           >
             <Image
               src={product.images[activeImage]}
               alt={product.name}
               fill
-              className="object-contain p-6"
+              className="object-contain p-2"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
