@@ -113,6 +113,7 @@ export const products: Product[] = [
     inStock: true,
   },
   {
+  {
     id: "baby-crib-unfinished",
     name: "Baby Crib — Unfinished",
     description: "Slatted baby crib with arched headboard and rocker base — raw pine, ready to finish.",
@@ -124,6 +125,7 @@ export const products: Product[] = [
     images: ["/products/Unfinished_Baby_Crib.jpg", "/products/Unfinished_Baby_Crib1.1.jpg"],
     wood: "Pine",
     inStock: true,
+    imagePosition: "center 30%",
   },
   {
     id: "crib-rails",
@@ -178,7 +180,7 @@ export const products: Product[] = [
     images: ["/products/Finished_Birdhouse.jpg"],
     wood: "Pine / Cedar",
     inStock: true,
-    imagePosition: "center 75%",
+    imagePosition: "top",
   },
   {
     id: "garden-bench",
@@ -192,7 +194,7 @@ export const products: Product[] = [
     images: ["/products/Bench.jpg"],
     wood: "Pine",
     inStock: true,
-    imagePosition: "center 35%",
+    imagePosition: "top",
   },
   {
     id: "round-pedestal-table",
