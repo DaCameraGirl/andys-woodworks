@@ -128,19 +128,6 @@ export const products: Product[] = [
     imagePosition: "center 30%",
   },
   {
-    id: "crib-rails",
-    name: "Crib Rails — Finished & Unfinished",
-    description: "Handcrafted crib rails, available finished or raw pine.",
-    longDescription:
-      "Need rails for a crib or cradle? Andy builds them to order. Shown here both finished in walnut stain and raw pine. Can be built to match any crib Andy makes or custom sized to fit what you already have.",
-    price: 0,
-    priceOnRequest: true,
-    category: "Furniture",
-    images: ["/products/Finished_Crib_Rails.jpg", "/products/Unfinished_Crib_Rails.jpg"],
-    wood: "Pine",
-    inStock: true,
-  },
-  {
     id: "bar-stools",
     name: "Bar Stools — Set of 2",
     description: "Solid wood bar stools with round seat and stretcher base — rich walnut stain.",
