@@ -1,6 +1,6 @@
 # 🪵 Andy's Woodworks
 
-> Handcrafted wood creations — built tough, finished with care, made in the USA 🇺🇸
+> Handcrafted wood creations — built tough, finished with care, made in the USA 🇺🇸 
 
 [![Live Site](https://img.shields.io/badge/🌐_Live_Site-andys--woodworks-8B4513?style=flat-square)](https://dacameragirl.github.io/andys-woodworks)
 
