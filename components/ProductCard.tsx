@@ -6,6 +6,7 @@ import { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/lib/cart-context";
 import { useState } from "react";
+import { withBasePath } from "@/lib/site-path";
 
 interface ProductCardProps {
   product: Product;
@@ -29,7 +30,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-square overflow-hidden" style={{ background: "var(--bg-surface)" }}>
           <Image
-            src={product.images[0]}
+            src={withBasePath(product.images[0])}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -73,11 +74,11 @@ export default function ProductCard({ product }: ProductCardProps) {
             )}
           </span>
           {product.priceOnRequest ? (
-            <a href="/contact" onClick={(e) => e.stopPropagation()}
+            <Link href="/contact" onClick={(e) => e.stopPropagation()}
               className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
               style={{ background: "var(--bg-surface)", color: "var(--gold)", border: "1px solid var(--gold)" }}>
               Inquire
-            </a>
+            </Link>
           ) : (
             <button onClick={handleAddToCart} disabled={!product.inStock}
               className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all duration-200"

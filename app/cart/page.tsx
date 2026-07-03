@@ -4,43 +4,15 @@ import { useCart } from "@/lib/cart-context";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { withBasePath } from "@/lib/site-path";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, subtotal, clearCart } = useCart();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  async function handleCheckout() {
-    setLoading(true);
-    setError("");
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: items.map((i) => ({
-            productId: i.product.id,
-            name: i.product.name,
-            price: i.product.price,
-            quantity: i.quantity,
-            image: i.product.images[0],
-          })),
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Checkout failed");
-      window.location.href = data.url;
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
-      setLoading(false);
-    }
-  }
 
   if (items.length === 0) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-32 text-center">
-        <div className="text-6xl mb-6">🪵</div>
+        <div className="text-6xl mb-6">Wood</div>
         <h1 className="text-2xl font-bold text-stone-800 mb-3">
           Your cart is empty
         </h1>
@@ -62,7 +34,6 @@ export default function CartPage() {
       <h1 className="text-2xl font-bold text-stone-900 mb-8">Your Cart</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {/* Items */}
         <div className="lg:col-span-2 space-y-4">
           {items.map(({ product, quantity }) => (
             <div
@@ -71,7 +42,7 @@ export default function CartPage() {
             >
               <div className="relative w-24 h-24 rounded-lg overflow-hidden bg-stone-100 flex-shrink-0">
                 <Image
-                  src={product.images[0]}
+                  src={withBasePath(product.images[0])}
                   alt={product.name}
                   fill
                   className="object-cover"
@@ -94,18 +65,14 @@ export default function CartPage() {
                 <div className="flex items-center gap-3 mt-3">
                   <div className="flex items-center border border-stone-200 rounded-lg overflow-hidden text-sm">
                     <button
-                      onClick={() =>
-                        updateQuantity(product.id, quantity - 1)
-                      }
+                      onClick={() => updateQuantity(product.id, quantity - 1)}
                       className="px-2 py-1 hover:bg-stone-100 transition-colors"
                     >
-                      −
+                      -
                     </button>
                     <span className="px-3 py-1">{quantity}</span>
                     <button
-                      onClick={() =>
-                        updateQuantity(product.id, quantity + 1)
-                      }
+                      onClick={() => updateQuantity(product.id, quantity + 1)}
                       className="px-2 py-1 hover:bg-stone-100 transition-colors"
                     >
                       +
@@ -133,7 +100,6 @@ export default function CartPage() {
           </button>
         </div>
 
-        {/* Summary */}
         <div className="bg-stone-50 rounded-2xl p-6 h-fit border border-stone-100 space-y-4">
           <h2 className="font-bold text-stone-900 text-lg">Order Summary</h2>
 
@@ -141,7 +107,7 @@ export default function CartPage() {
             {items.map(({ product, quantity }) => (
               <div key={product.id} className="flex justify-between">
                 <span className="truncate mr-2">
-                  {product.name} × {quantity}
+                  {product.name} x {quantity}
                 </span>
                 <span className="font-medium text-stone-800 whitespace-nowrap">
                   {formatPrice(product.price * quantity)}
@@ -155,22 +121,15 @@ export default function CartPage() {
             <span>{formatPrice(subtotal)}</span>
           </div>
           <p className="text-xs text-stone-400">
-            Shipping and taxes calculated at checkout.
+            This GitHub Pages build is a catalog preview. Use the inquiry button below to send Andy your order details.
           </p>
 
-          {error && (
-            <p className="text-red-500 text-xs bg-red-50 p-2 rounded-lg">
-              {error}
-            </p>
-          )}
-
-          <button
-            onClick={handleCheckout}
-            disabled={loading}
-            className="w-full bg-stone-900 text-white font-bold py-4 rounded-xl hover:bg-amber-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed text-sm uppercase tracking-wide"
+          <Link
+            href="/contact"
+            className="block text-center w-full bg-stone-900 text-white font-bold py-4 rounded-xl hover:bg-amber-600 transition-colors text-sm uppercase tracking-wide"
           >
-            {loading ? "Redirecting to checkout…" : "Checkout with Stripe →"}
-          </button>
+            Request This Order
+          </Link>
         </div>
       </div>
     </div>

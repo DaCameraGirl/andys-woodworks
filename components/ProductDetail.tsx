@@ -7,6 +7,7 @@ import { useCart } from "@/lib/cart-context";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { withBasePath } from "@/lib/site-path";
 
 interface Props {
   product: Product;
@@ -48,7 +49,7 @@ export default function ProductDetail({ product }: Props) {
             style={{ background: "var(--bg-surface)", border: "1px solid var(--border)", minHeight: "640px" }}
           >
             <Image
-              src={product.images[activeImage]}
+              src={withBasePath(product.images[activeImage])}
               alt={product.name}
               fill
               className="object-contain p-2"
@@ -71,7 +72,7 @@ export default function ProductDetail({ product }: Props) {
                   }}
                 >
                   <Image
-                    src={img}
+                    src={withBasePath(img)}
                     alt={`${product.name} view ${idx + 1}`}
                     fill
                     className="object-contain p-1"
@@ -186,7 +187,7 @@ export default function ProductDetail({ product }: Props) {
               >
                 <div className="relative h-44" style={{ background: "var(--bg-surface)" }}>
                   <Image
-                    src={p.images[0]}
+                    src={withBasePath(p.images[0])}
                     alt={p.name}
                     fill
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
